@@ -1,7 +1,7 @@
 const  animals = [
     {
         animal: 'Crocodile',
-        Name: 'Dandy',
+        animalName: 'Dandy',
         Health: true,
         color: 'green',
         weight: 400,
@@ -13,7 +13,7 @@ const  animals = [
     },
     {
         animal: 'elephant',
-        Name: 'Dambo',
+        animalName: 'Dambo',
         Health: "ok",
         color: 'gray',
         weight: 800,
@@ -24,7 +24,7 @@ const  animals = [
     },
     {
         animal: 'Snake',
-        Name: 'Vasilisk',
+        animalName: 'Vasilisk',
         Health: true,
         color: 'brown',
         weight: 200,
@@ -39,50 +39,55 @@ const  animals = [
 
 
 
-let searchAnimal = (srch) => {   //Поиск животного 
+let searchAnimal = (animals, srch) => {   //Поиск животного 
     srch = srch.toLowerCase();
     for(let i=0; i<animals.length; i++)
-        if(srch === animals[i].animal.toLowerCase() || srch === animals[i].Name.toLowerCase() ){
-        alert(`
+        if(srch === animals[i].animal.toLowerCase() || srch === animals[i].animalName.toLowerCase() ){
+        console.log(`
            \n Животное: ${animals[i].animal} 
-           \n Имя: ${animals[i].Name} 
+           \n Имя: ${animals[i].animalName} 
            \n цвет: ${animals[i].color} 
            \n вес: ${animals[i].weight}
            \n надзиратель: ${animals[i].inspector.name}` );
          }
         
 }
+searchAnimal()
 
 
 
-let deleteAnimal = (del) => {   //удалить животное
-    del = del.toLowerCase();
-    for(let i=0; i<animals.length; i++)
-        if(del === animals[i].animal.toLowerCase() || del === animals[i].Name.toLowerCase()){
-            let removeAnimal = animals.splice(i, 1)
-            console.log(`${removeAnimal[0].Name} Выгнали`)
+let deleteAnimal = (name, zoo) => {   //удалить животное
+    name = name.toLowerCase();
+    for(let i=0; i<zoo.length; i++)
+        if(name === zoo[i].animal.toLowerCase() || name === zoo[i].animalName.toLowerCase()){
+            let removeAnimal = zoo.splice(i, 1)
+            console.log(`${removeAnimal[0].animalName} Выгнали`)
             
          }
         
 }
 
+deleteAnimal()
 
 
 
-let addAnimal = () => { //добивать животное
+const someAnimal = {           //добавить животное
+        animal: 'Dolphin',
+        Name: 'winter',
+        Health: true,
+        color: 'white',
+        weight: 200,
+        inspector: {
+            name: 'Din',
+            age: 20,
+        }
 
-    let newanimal = prompt('Кого добавляем? Введите какое животоное')
-    let newName = prompt('Кого добавляем? Введите имя')
-    let newHealth = prompt('Как здоровье? ')
-    let newColor = prompt('Введите цвет?')
-    let newWeight = prompt('Введите вес')
-
-   animals.push({animal: newanimal,
-Name: newName,
-Health: newHealth,
-color: newColor,
-weight: newWeight,
-
-})
-    
 }
+
+let addAnimal = (animal, zoo) => {    
+    zoo.push(animal);
+
+
+console.log(zoo);
+} 
+addAnimal(someAnimal, animals)
