@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/paint.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="window">
+        <div class="paint">
+            <div class="figure">
+                <div class="choose-figure">
+                    <div class="figure__menu">
+                        <span>Choose figure</span>
+                        <ul  id ="menu__inner" class="menu__inner">
+                            <li class="inner__item inner__triangle">
+                            
+                            </li>
+                            <li class="inner__item inner__circle">
+                                
+                            </li>
+                            <li class="inner__item inner__square">
+                                
+                            </li>
+                    </ul>
+                    </div>
+                    
+                </div>    
+
+                    <div class="figure-area">
+                        <svg class="svg__triangle svg__align">
+                            <polygon class="area__color__figure area__triangle" points="5,135 50,5 100,135"/>
+                             
+                        </svg>
+                      
+                        <svg class="svg__circle svg__align">
+                            <circle  class="area__color__figure area__circle" r="65" cx="70" cy="70"/>
+                        </svg>
+                        <svg class="svg__square svg__align">
+                            <rect class="area__color__figure area__square" x="5" y="5" width="130" height="130"/>
+                        </svg>
+
+                        
+                    </div>
+                    <button class="clear">Clear area</button>
+                
+            </div>
+            <div class="color-choose">
+                <div class="circle-color">
+                    <div class="circle yellow"></div>
+                    <div class="circle red"></div>
+                    <div class="circle blue"></div>
+                    <div class="circle black"></div>
+                    <div class="circle pink"></div>
+                    <div class="circle green"></div>
+                </div>
+                <button class="reset"><span>reset color</span></button>
+            </div>
+        </div>
+
+    </div>
+    <script src="/script/paintapp.js"></script>
+</body>
+</html>
